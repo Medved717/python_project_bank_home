@@ -10,7 +10,7 @@ def get_mask_card_number(card_number: str) -> str:
     if not card_number.isdigit():
         return 'Номер карты должен состоять только из цифр.'
     else:
-        mask_number = card_number.replace(card_number[6:12], "XXXXXX")
+        mask_number = card_number[:6] + "XXXXXX" + card_number[12:]
         groups = []
         for i in range(0, len(mask_number), 4):
             group = mask_number[i: i + 4]
@@ -18,10 +18,6 @@ def get_mask_card_number(card_number: str) -> str:
 
         result = " ".join(groups)
         return result
-
-
-mask_card_number = get_mask_card_number("6457936893674786")
-print(mask_card_number)
 
 
 def get_mask_account(mask_account: str) -> str:
@@ -41,7 +37,5 @@ def get_mask_account(mask_account: str) -> str:
         return result
 
 
-result_1 = get_mask_account("736541084301358f305")
-print(result_1)
 
-# "73654108430135874305"
+
