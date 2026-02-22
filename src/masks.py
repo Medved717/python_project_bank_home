@@ -1,6 +1,5 @@
 def get_mask_card_number(card_number: str) -> str:
     """Функция принимает на вход номер карты и возвращает ее маску."""
-
     if not card_number:
         return 'Номер карты не введен.'
     if len(card_number) > 16:
