@@ -1,18 +1,13 @@
-from src.masks import get_mask_card_number
+from src.masks import get_mask_account, get_mask_card_number
 
 
 def get_mask_account_card(card_and_account_number: str) -> str:
     """Функция, которая принимает на вход тип и номер карты, а также номер счета, выводит маску."""
 
-    if card_and_account_number == '':
-        raise ValueError(f'Ошибка: введена пустая строка.')
+    if card_and_account_number == "":
+        raise ValueError("Ошибка: введена пустая строка.")
 
-    card_types = {
-    'Maestro' : 8,
-    'MasterCard' : 11,
-    'Visa Classic' : 13,
-    'Visa Platinum' : 14,
-    'Visa Gold' : 10}
+    card_types = {"Maestro": 8, "MasterCard": 11, "Visa Classic": 13, "Visa Platinum": 14, "Visa Gold": 10}
     score_types = "Счет"
     score_len = 5
 
@@ -21,7 +16,7 @@ def get_mask_account_card(card_and_account_number: str) -> str:
     if score_types in card_and_account_number:
         number_score = card_and_account_number[score_len:]
         mask_number_score = get_mask_account(number_score)
-        result_mask_number_score = score_types + ' ' + mask_number_score
+        result_mask_number_score = score_types + " " + mask_number_score
         return result_mask_number_score
 
     # Проходим по циклу словаря типов карт и выбирам ту, которая соответствует введенному типу
@@ -29,12 +24,13 @@ def get_mask_account_card(card_and_account_number: str) -> str:
     for card, card_len in card_types.items():
         if card in card_and_account_number:
             card_types_cycle = card_and_account_number[:card_len]
-            card_number = card_and_account_number[card_len:].strip(' ')
+            card_number = card_and_account_number[card_len:].strip(" ")
             mask_card_number = get_mask_card_number(card_number)
             result_mask_card = card_types_cycle + mask_card_number
             return result_mask_card
 
-    raise ValueError(f'Не удалось распознать тип карты или счета.')
+    raise ValueError("Не удалось распознать тип карты или счета.")
 
-result = get_mask_account_card('MasterCard 7364831111746573')
+
+result = get_mask_account_card("MasterCard 7364831111746573")
 print(result)
