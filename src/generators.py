@@ -2,12 +2,7 @@ def filter_by_currency(transactions, code):
     """Фильтрует поступающие транзакции по валюте."""
     found = False
     for transaction in transactions:
-        if (
-            transaction.get("operationAmount", {})
-            .get("currency", {})
-            .get("code", "Транзакция в указанной валюте не найдена.")
-            == code
-        ):
+        if transaction.get("operationAmount", {}).get("currency", {}).get("code") == code:
             found = True
             yield transaction
     if not found:
@@ -16,11 +11,12 @@ def filter_by_currency(transactions, code):
 
 def transaction_descriptions(transactions):
     """Выводит результат операции."""
-
+    found = False
     for transaction in transactions:
         if transaction.get("description") is not None:
+            found = True
             yield transaction.get("description")
-        else:
+        if not found:
             yield "Отсутствуют данные об описании транзакции."
 
 
