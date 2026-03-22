@@ -6,8 +6,10 @@ def filter_by_state(list_of_transactions: list, status: str = "EXECUTED") -> lis
     for list_state in list_of_transactions:
         if list_state["state"] == status:
             list_executed.append(list_state)
-
-    return list_executed
+    if list_executed == []:
+        return 'Отсутствуют данные о state (государстве).'
+    else:
+        return list_executed
 
 
 # result_excuted = filter_by_state(

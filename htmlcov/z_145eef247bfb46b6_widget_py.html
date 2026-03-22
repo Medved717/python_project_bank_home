@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Coverage for src\widget.py: 59%</title>
+    <title>Coverage for src\widget.py: 82%</title>
     <link rel="icon" sizes="32x32" href="favicon_32_cb_c827f16f.png">
     <link rel="stylesheet" href="style_cb_5c747636.css" type="text/css">
     <script src="coverage_html_cb_188fc9a4.js" defer></script>
@@ -12,7 +12,7 @@
     <div class="content">
         <h1>
             <span class="text">Coverage for </span><b>src&#8201;\&#8201;widget.py</b>:
-            <span class="pc_cov">59%</span>
+            <span class="pc_cov">82%</span>
         </h1>
         <aside id="help_panel_wrapper">
             <input id="help_panel_state" type="checkbox">
@@ -55,17 +55,17 @@
         </aside>
         <h2>
             <span class="text">22 statements &nbsp;</span>
-            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">13<span class="text"> run</span></button>
-            <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">9<span class="text"> missing</span></button>
+            <button type="button" class="run button_toggle_run" value="run" data-shortcut="r" title="Toggle lines run">18<span class="text"> run</span></button>
+            <button type="button" class="mis show_mis button_toggle_mis" value="mis" data-shortcut="m" title="Toggle lines missing">4<span class="text"> missing</span></button>
             <button type="button" class="exc show_exc button_toggle_exc" value="exc" data-shortcut="x" title="Toggle lines excluded">0<span class="text"> excluded</span></button>
         </h2>
         <p class="text">
             <a id="prevFileLink" class="nav" href="z_145eef247bfb46b6_processing_py.html">&#xab; prev</a> &nbsp; &nbsp;
             <a id="indexLink" class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
-            <a id="nextFileLink" class="nav" href="z_a44f0ac069e85531___init___py.html">&#xbb; next</a>
+            <a id="nextFileLink" class="nav" href="index.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.13.4">coverage.py v7.13.4</a>,
-            created at 2026-03-21 22:30 +0300
+            created at 2026-03-22 23:21 +0300
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -96,18 +96,18 @@
     <p class="pln"><span class="n"><a id="t14" href="#t14">14</a></span><span class="t">    <span class="com"># &#1057;&#1086;&#1079;&#1076;&#1072;&#1077;&#1084; &#1091;&#1089;&#1083;&#1086;&#1074;&#1080;&#1077; &#1087;&#1088;&#1080; &#1082;&#1086;&#1090;&#1086;&#1088;&#1086;&#1084;, &#1077;&#1089;&#1083;&#1080; &#1073;&#1091;&#1076;&#1077;&#1090; &#1079;&#1072;&#1076;&#1072;&#1085; &#1090;&#1080;&#1087; "&#1057;&#1095;&#1077;&#1090;",</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t15" href="#t15">15</a></span><span class="t">    <span class="com"># &#1090;&#1086; &#1076;&#1072;&#1083;&#1077;&#1077; &#1086;&#1089;&#1091;&#1097;&#1077;&#1089;&#1090;&#1074;&#1083;&#1103;&#1077;&#1084; &#1089;&#1086;&#1082;&#1088;&#1099;&#1090;&#1080;&#1077; &#1085;&#1086;&#1084;&#1077;&#1088;&#1072; &#1089;&#1095;&#1077;&#1090;&#1072; &#1080; &#1087;&#1088;&#1080;&#1089;&#1086;&#1077;&#1076;&#1080;&#1085;&#1103;&#1077;&#1084; &#1090;&#1080;&#1087; &#1089;&#1095;&#1077;&#1090;&#1072;.</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t16" href="#t16">16</a></span><span class="t">    <span class="key">if</span> <span class="nam">score_types</span> <span class="key">in</span> <span class="nam">card_and_account_number</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t17" href="#t17">17</a></span><span class="t">        <span class="nam">number_score</span> <span class="op">=</span> <span class="nam">card_and_account_number</span><span class="op">[</span><span class="nam">score_len</span><span class="op">:</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
+    <p class="mis show_mis"><span class="n"><a id="t17" href="#t17">17</a></span><span class="t">        <span class="nam">number_score</span> <span class="op">=</span> <span class="nam">card_and_account_number</span><span class="op">[</span><span class="nam">score_len</span><span class="op">:</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t18" href="#t18">18</a></span><span class="t">        <span class="nam">mask_number_score</span> <span class="op">=</span> <span class="nam">get_mask_account</span><span class="op">(</span><span class="nam">number_score</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t19" href="#t19">19</a></span><span class="t">        <span class="nam">result_mask_number_score</span> <span class="op">=</span> <span class="nam">score_types</span> <span class="op">+</span> <span class="str">" "</span> <span class="op">+</span> <span class="nam">mask_number_score</span>&nbsp;</span><span class="r"></span></p>
     <p class="mis show_mis"><span class="n"><a id="t20" href="#t20">20</a></span><span class="t">        <span class="key">return</span> <span class="nam">result_mask_number_score</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t21" href="#t21">21</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t22" href="#t22">22</a></span><span class="t">    <span class="com"># &#1055;&#1088;&#1086;&#1093;&#1086;&#1076;&#1080;&#1084; &#1087;&#1086; &#1094;&#1080;&#1082;&#1083;&#1091; &#1089;&#1083;&#1086;&#1074;&#1072;&#1088;&#1103; &#1090;&#1080;&#1087;&#1086;&#1074; &#1082;&#1072;&#1088;&#1090; &#1080; &#1074;&#1099;&#1073;&#1080;&#1088;&#1072;&#1084; &#1090;&#1091;, &#1082;&#1086;&#1090;&#1086;&#1088;&#1072;&#1103; &#1089;&#1086;&#1086;&#1090;&#1074;&#1077;&#1090;&#1089;&#1090;&#1074;&#1091;&#1077;&#1090; &#1074;&#1074;&#1077;&#1076;&#1077;&#1085;&#1085;&#1086;&#1084;&#1091; &#1090;&#1080;&#1087;&#1091;</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t23" href="#t23">23</a></span><span class="t">    <span class="com"># &#1080; &#1084;&#1072;&#1089;&#1082;&#1080;&#1088;&#1091;&#1077;&#1084; &#1085;&#1086;&#1084;&#1077;&#1088; &#1082;&#1072;&#1088;&#1090;&#1099;, &#1080; &#1087;&#1088;&#1080;&#1089;&#1086;&#1077;&#1076;&#1080;&#1085;&#1103;&#1077;&#1084; &#1090;&#1080;&#1087; &#1082;&#1072;&#1088;&#1090;&#1099;</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t24" href="#t24">24</a></span><span class="t">    <span class="key">for</span> <span class="nam">card</span><span class="op">,</span> <span class="nam">card_len</span> <span class="key">in</span> <span class="nam">card_types</span><span class="op">.</span><span class="nam">items</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t25" href="#t25">25</a></span><span class="t">        <span class="key">if</span> <span class="nam">card</span> <span class="key">in</span> <span class="nam">card_and_account_number</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t26" href="#t26">26</a></span><span class="t">            <span class="nam">card_types_cycle</span> <span class="op">=</span> <span class="nam">card_and_account_number</span><span class="op">[</span><span class="op">:</span><span class="nam">card_len</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t27" href="#t27">27</a></span><span class="t">            <span class="nam">card_number</span> <span class="op">=</span> <span class="nam">card_and_account_number</span><span class="op">[</span><span class="nam">card_len</span><span class="op">:</span><span class="op">]</span><span class="op">.</span><span class="nam">strip</span><span class="op">(</span><span class="str">" "</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t28" href="#t28">28</a></span><span class="t">            <span class="nam">mask_card_number</span> <span class="op">=</span> <span class="nam">get_mask_card_number</span><span class="op">(</span><span class="nam">card_number</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t24" href="#t24">24</a></span><span class="t">    <span class="key">for</span> <span class="nam">card</span><span class="op">,</span> <span class="nam">card_len</span> <span class="key">in</span> <span class="nam">card_types</span><span class="op">.</span><span class="nam">items</span><span class="op">(</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t25" href="#t25">25</a></span><span class="t">        <span class="key">if</span> <span class="nam">card</span> <span class="key">in</span> <span class="nam">card_and_account_number</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t26" href="#t26">26</a></span><span class="t">            <span class="nam">card_types_cycle</span> <span class="op">=</span> <span class="nam">card_and_account_number</span><span class="op">[</span><span class="op">:</span><span class="nam">card_len</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t27" href="#t27">27</a></span><span class="t">            <span class="nam">card_number</span> <span class="op">=</span> <span class="nam">card_and_account_number</span><span class="op">[</span><span class="nam">card_len</span><span class="op">:</span><span class="op">]</span><span class="op">.</span><span class="nam">strip</span><span class="op">(</span><span class="str">" "</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t28" href="#t28">28</a></span><span class="t">            <span class="nam">mask_card_number</span> <span class="op">=</span> <span class="nam">get_mask_card_number</span><span class="op">(</span><span class="nam">card_number</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t29" href="#t29">29</a></span><span class="t">            <span class="nam">result_mask_card</span> <span class="op">=</span> <span class="nam">card_types_cycle</span> <span class="op">+</span> <span class="nam">mask_card_number</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t30" href="#t30">30</a></span><span class="t">            <span class="key">return</span> <span class="nam">result_mask_card</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t31" href="#t31">31</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
@@ -115,17 +115,17 @@
     <p class="pln"><span class="n"><a id="t33" href="#t33">33</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t34" href="#t34">34</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t35" href="#t35">35</a></span><span class="t"><span class="nam">result</span> <span class="op">=</span> <span class="nam">get_mask_account_card</span><span class="op">(</span><span class="str">"MasterCard 7364831111746573"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="mis show_mis"><span class="n"><a id="t36" href="#t36">36</a></span><span class="t"><span class="nam">print</span><span class="op">(</span><span class="nam">result</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t36" href="#t36">36</a></span><span class="t"><span class="nam">print</span><span class="op">(</span><span class="nam">result</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
 </main>
 <footer>
     <div class="content">
         <p>
             <a class="nav" href="z_145eef247bfb46b6_processing_py.html">&#xab; prev</a> &nbsp; &nbsp;
             <a class="nav" href="index.html">&Hat; index</a> &nbsp; &nbsp;
-            <a class="nav" href="z_a44f0ac069e85531___init___py.html">&#xbb; next</a>
+            <a class="nav" href="index.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.13.4">coverage.py v7.13.4</a>,
-            created at 2026-03-21 22:30 +0300
+            created at 2026-03-22 23:21 +0300
         </p>
     </div>
 </footer>
