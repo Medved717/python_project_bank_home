@@ -3,11 +3,11 @@ import pytest
 from src.processing import filter_by_state, sort_by_date
 
 
-
 def test_filter_by_state() -> None:
     "Тест для проверки ошибки на введение (получение) пустого списка."
     with pytest.raises(ValueError):
         filter_by_state([])
+
 
 @pytest.mark.parametrize(
     "transaction_state, expected_state",
@@ -39,6 +39,7 @@ def test_sort_by_date(date: list) -> None:
     with pytest.raises(KeyError):
         sort_by_date(date)
 
+
 @pytest.mark.parametrize(
     "transaction_state, expected_state",
     [
@@ -66,6 +67,5 @@ def test_filter_by_state(transaction_state, expected_state):
 
 
 def test_sort_by_date(date_card, date_card_sort):
-    result = sort_by_date(date_card_sort)
+    result = sort_by_date(date_card)
     assert result == date_card_sort
-
