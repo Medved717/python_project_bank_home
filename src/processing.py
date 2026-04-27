@@ -1,5 +1,5 @@
 def filter_by_state(list_of_transactions: list, status: str = "EXECUTED") -> list:
-    """Функция, которая принимает список словарей и выдает новый список словарей,
+    """Функция принимает список словарей и выдает новый список словарей,
     в которых присутствует значение 'EXECUTED'."""
 
     if list_of_transactions == []:
@@ -29,7 +29,7 @@ def filter_by_state(list_of_transactions: list, status: str = "EXECUTED") -> lis
 
 
 def sort_by_date(filter_date: list[dict], sorted_list: bool = True) -> list[dict]:
-    """Функция, которая сортирует список словарей по по дате в порядке убывания."""
+    """Функция, которая сортирует список словарей по дате в порядке убывания."""
 
     if not filter_date:
         raise ValueError("Ошибка! Данные отсутствуют.")

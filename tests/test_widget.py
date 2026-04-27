@@ -14,11 +14,10 @@ from src.widget import get_mask_account_card
         ("Счот 70007922896063615683", "Не удалось распознать тип карты или счета."),
     ],
 )
-<<<<<<< HEAD
+
 def test_mask_account_card_type(number_and_name_card: str, expected_result: str) -> None:
-=======
-def test_mask_account_card_type(number_and_name_card, expected_result):
->>>>>>> develop
+
+
     "Тест обработки не существующих карт и счетов."
     with pytest.raises(ValueError) as exc_info:
         get_mask_account_card(number_and_name_card)

@@ -14,11 +14,10 @@ from src.masks import get_mask_account, get_mask_card_number
         ("1111111111111111", "1111 11XX XXXX 1111"),
     ],
 )
-<<<<<<< HEAD
-def test_get_mask_card_number(number_card: str, expected_result: str) -> None:
-=======
+
+# def test_get_mask_card_number(number_card: str, expected_result: str) -> None:
+
 def test_get_mask_card_number(number_card, expected_result):
->>>>>>> develop
     assert get_mask_card_number(number_card) == expected_result
 
 
@@ -33,9 +32,8 @@ def test_get_mask_card_number(number_card, expected_result):
         ("736541084301358f305", "Номер счета должен состоять не менее чем из 20 цифр."),
     ],
 )
-<<<<<<< HEAD
-def test_get_mask_account(number_account: str, expected_result: str) -> None:
-=======
+
+
 def test_get_mask_account(number_account, expected_result):
->>>>>>> develop
+
     assert get_mask_account(number_account) == expected_result

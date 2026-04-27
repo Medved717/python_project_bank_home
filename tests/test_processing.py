@@ -3,17 +3,29 @@ import pytest
 from src.processing import filter_by_state, sort_by_date
 
 
-<<<<<<< HEAD
+
 def test_filter_by_state() -> None:
     "Тест для проверки ошибки на введение (получение) пустого списка."
     with pytest.raises(ValueError):
         filter_by_state([])
 
-
-def test_filter_by_state_no_state(transactions: list) -> None:
+@pytest.mark.parametrize(
+    "transaction_state, expected_state",
+    [
+        (
+            [{"id": 594226727, "date": "2018-09-12T21:27:25.241689"}],
+            "Отсутствуют данные о state (государстве).",
+        ),
+        (
+            [{"id": 615064591, "date": "2018-10-14T08:21:33.419441"}],
+            "Отсутствуют данные о state (государстве).",
+        ),
+    ],
+)
+def test_filter_by_state_no_state(transaction_state: list, expected_state: str) -> None:
     'Тест на проверку отсутствия ключа "state"'
     with pytest.raises(KeyError):
-        filter_by_state(transactions)
+        filter_by_state(transaction_state)
 
 
 def test_sort_by_no_list() -> None:
@@ -26,7 +38,7 @@ def test_sort_by_date(date: list) -> None:
     'Тест на проверку отсутствия ключа "date"'
     with pytest.raises(KeyError):
         sort_by_date(date)
-=======
+
 @pytest.mark.parametrize(
     "transaction_state, expected_state",
     [
@@ -56,4 +68,4 @@ def test_filter_by_state(transaction_state, expected_state):
 def test_sort_by_date(date_card, date_card_sort):
     result = sort_by_date(date_card_sort)
     assert result == date_card_sort
->>>>>>> develop
+
