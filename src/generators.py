@@ -74,5 +74,5 @@ def card_number_generator(start, stop):
 
     for num in range(start, stop + 1):
         str_num = "0" * (16 - len(str(num))) + str(num)
-        groups_num = " ".join(list(str_num[i:i + 4] for i in range(0, len(str_num), 4)))
+        groups_num = " ".join(list(str_num[i: i + 4] for i in range(0, len(str_num), 4)))
         yield groups_num
