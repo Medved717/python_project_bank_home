@@ -49,6 +49,7 @@ transactions = [
 
 def filter_by_currency(transactions, code):
     """Фильтрует поступающие транзакции по валюте."""
+
     found = False
     for transaction in transactions:
         if transaction.get("operationAmount", {}).get("currency", {}).get("code") == code:

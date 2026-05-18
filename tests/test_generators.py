@@ -3,9 +3,9 @@ import pytest
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 
-def test_filter_by_currency_usd(transactions):
+def test_filter_by_currency_usd(transactions_1):
     """Проверяем транзакцию в валюте "USD"."""
-    result = filter_by_currency(transactions, "USD")
+    result = filter_by_currency(transactions_1, "USD")
     try:
         assert next(result) == {
             "id": 939719570,
