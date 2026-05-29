@@ -18,7 +18,7 @@ logger.addHandler(file_handler)
 logger.setLevel(logging.INFO)
 
 
-file_path = os.path.join("..", "..", "data", "operations.json")
+# file_path = os.path.join("..", "..", "data", "operations.json")
 
 
 def operations_json(json_file: str) -> list:
