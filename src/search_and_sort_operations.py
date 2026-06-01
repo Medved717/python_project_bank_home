@@ -3,7 +3,7 @@ from collections import Counter
 
 
 def process_bank_search(data:list[dict], search:str)->list[dict]:
-    """Принимаетт список словарей с данными о банковских операциях и строку поиска,
+    """Принимает список словарей с данными о банковских операциях и строку поиска,
     а возвращает список словарей, у которых в описании есть данная строка."""
 
     pattern = re.compile(search, re.IGNORECASE)

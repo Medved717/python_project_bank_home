@@ -1,4 +1,5 @@
 from src.masks import get_mask_account, get_mask_card_number
+from datetime import datetime
 
 
 def get_mask_account_card(card_and_account_number: str) -> str:
@@ -7,7 +8,7 @@ def get_mask_account_card(card_and_account_number: str) -> str:
     if card_and_account_number == "":
         raise ValueError("Ошибка: введена пустая строка.")
 
-    card_types = {"Maestro": 8, "MasterCard": 11, "Visa Classic": 13, "Visa Platinum": 14, "Visa Gold": 10}
+    card_types = {"Maestro": 8, "MasterCard": 11, "Visa Classic": 13, "Visa Platinum": 14, "Visa Gold": 10, "МИР": 3}
     score_types = "Счет"
     score_len = 5
 
@@ -31,6 +32,7 @@ def get_mask_account_card(card_and_account_number: str) -> str:
 
     raise ValueError("Не удалось распознать тип карты или счета.")
 
-
-result = get_mask_account_card("MasterCard 7364831111746573")
-print(result)
+#
+# def the_correct_date_format(date):
+#     result_date =
+#     Продолжи код с datetime в дипсике
