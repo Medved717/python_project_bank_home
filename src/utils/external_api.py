@@ -5,7 +5,6 @@ import os
 import requests
 from dotenv import load_dotenv
 
-
 # Поднимаемся на уровень выше из src в корень проекта
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 logs_path = os.path.join(project_root, "logs", "external_log.log")

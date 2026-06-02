@@ -1,12 +1,11 @@
+import os
+
 from src.generators import filter_by_currency
 from src.processing import filter_by_state, sort_by_date
 from src.read_csv_and_excel_files import reading_csv_transactions, reading_excel_transactions
-from src.search_and_sort_operations import process_bank_search, counter_bank_operations
+from src.search_and_sort_operations import counter_bank_operations, process_bank_search
 from src.utils.external_api import operations_json
-import os
-
-
-from src.widget import get_mask_account_card, convert_date
+from src.widget import convert_date, get_mask_account_card
 
 if __name__ == "__main__":
 

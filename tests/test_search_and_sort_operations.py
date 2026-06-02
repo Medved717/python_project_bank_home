@@ -1,4 +1,4 @@
-from src.search_and_sort_operations import process_bank_search, counter_bank_operations
+from src.search_and_sort_operations import counter_bank_operations, process_bank_search
 
 
 def test_process_bank_search(transactions_1):

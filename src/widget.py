@@ -1,5 +1,6 @@
-from src.masks import get_mask_account, get_mask_card_number
 from datetime import datetime
+
+from src.masks import get_mask_account, get_mask_card_number
 
 
 def get_mask_account_card(card_and_account_number: str) -> str:

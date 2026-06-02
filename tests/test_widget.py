@@ -1,6 +1,6 @@
 import pytest
 
-from src.widget import get_mask_account_card, convert_date
+from src.widget import convert_date, get_mask_account_card
 
 
 @pytest.mark.parametrize(
