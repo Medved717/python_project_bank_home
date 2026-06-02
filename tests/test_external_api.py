@@ -1,8 +1,11 @@
+import os
 from unittest.mock import patch
 
 import requests
 
-from src.utils.external_api import covert_to_rub, file_path, operations_json
+from src.utils.external_api import covert_to_rub, operations_json
+
+file_path = os.path.join("..", "data", "operations.json")
 
 
 @patch("builtins.open")

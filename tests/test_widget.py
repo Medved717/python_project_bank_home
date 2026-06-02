@@ -1,6 +1,6 @@
 import pytest
 
-from src.widget import get_mask_account_card
+from src.widget import convert_date, get_mask_account_card
 
 
 @pytest.mark.parametrize(
@@ -25,3 +25,10 @@ def test_mask_account_card() -> None:
     with pytest.raises(ValueError) as exc_info:
         get_mask_account_card("")
     assert str(exc_info.value) == "Ошибка: введена пустая строка."
+
+
+def test_convert_date() -> None:
+    """Тест с данными, где есть дата, в том числе и время."""
+
+    assert convert_date("2018-01-21T01:10:28.317704") == "21.01.2018"
+    assert convert_date("2018-01-21T") == "21.01.2018"

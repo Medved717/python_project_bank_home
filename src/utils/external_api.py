@@ -18,9 +18,6 @@ logger.addHandler(file_handler)
 logger.setLevel(logging.INFO)
 
 
-file_path = os.path.join("..", "..", "data", "operations.json")
-
-
 def operations_json(json_file: str) -> list:
     """Осуществляется прием json файла со списком транзакций, обрабатывается и выводит список транзакций
     в виде списка словарей."""
@@ -74,16 +71,16 @@ def covert_to_rub(list_transactions: dict) -> float:
         return 0.0
 
 
-print(
-    covert_to_rub(
-        {
-            "id": 142264268,
-            "state": "EXECUTED",
-            "date": "2019-04-04T23:20:05.206878",
-            "operationAmount": {"amount": "79114.93", "currency": {"name": "USD", "code": "USD"}},
-            "description": "Перевод со счета на счет",
-            "from": "Счет 19708645243227258542",
-            "to": "Счет 75651667383060284188",
-        }
-    )
-)
+# print(
+#     covert_to_rub(
+#         {
+#             "id": 142264268,
+#             "state": "EXECUTED",
+#             "date": "2019-04-04T23:20:05.206878",
+#             "operationAmount": {"amount": "79114.93", "currency": {"name": "USD", "code": "USD"}},
+#             "description": "Перевод со счета на счет",
+#             "from": "Счет 19708645243227258542",
+#             "to": "Счет 75651667383060284188",
+#         }
+#     )
+# )
