@@ -2,7 +2,7 @@ import os
 
 import pandas as pd
 
-transactions_puth_csv = os.path.join("transactions.csv")
+transactions_puth_csv = os.path.join("../data/transactions.csv")
 
 
 def reading_csv_transactions(transactions_puth_csv):
@@ -12,7 +12,7 @@ def reading_csv_transactions(transactions_puth_csv):
     return transactions_dict
 
 
-transactions_puth_excel = os.path.join("transactions_excel.xlsx")
+transactions_puth_excel = os.path.join("../data/transactions_excel.xlsx")
 
 
 def reading_excel_transactions(transactions_puth_excel):

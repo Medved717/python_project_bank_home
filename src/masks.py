@@ -37,9 +37,6 @@ def get_mask_card_number(card_number: str) -> str:
         return result
 
 
-get_mask_card_number("2345347865435679")
-
-
 def get_mask_account(mask_account: str) -> str:
     """ "Функция, которая укорачивает и маскирует номер счета"""
     logger.info("Проверяем соответствие номера счета критериям.")
@@ -59,6 +56,3 @@ def get_mask_account(mask_account: str) -> str:
         result = new_mask_account.replace(new_mask_account[0:2], "**")
         logger.info("Выполнение формирования номера счета завершена.")
         return result
-
-
-get_mask_account("34543678756894567467")
