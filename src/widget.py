@@ -32,7 +32,13 @@ def get_mask_account_card(card_and_account_number: str) -> str:
 
     raise ValueError("Не удалось распознать тип карты или счета.")
 
-#
-# def the_correct_date_format(date):
-#     result_date =
-#     Продолжи код с datetime в дипсике
+
+def convert_date(date: str) -> str:
+    """Преобразует даты из представленного формата в необходимый формат
+    '2018-01-21T01:10:28.317704' → '21.01.2018'"""
+
+    date_obj = datetime.strptime(date[:10], "%Y-%m-%d")
+    return date_obj.strftime("%d.%m.%Y")
+
+
+

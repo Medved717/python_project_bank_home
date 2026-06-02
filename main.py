@@ -4,8 +4,9 @@ from src.read_csv_and_excel_files import reading_csv_transactions, reading_excel
 from src.search_and_sort_operations import process_bank_search, counter_bank_operations
 from src.utils.external_api import operations_json
 import os
+from datetime import datetime
 
-from src.widget import get_mask_account_card
+from src.widget import get_mask_account_card, convert_date
 
 if __name__ == '__main__':
 
@@ -99,6 +100,7 @@ if __name__ == '__main__':
             break
         elif input_word == "НЕТ":
             search_operation = sort_rub
+            counter_operation_summ = len(search_operation)
             break
 
     print("Программа: Распечатываю итоговый список транзакций...")
@@ -108,10 +110,20 @@ if __name__ == '__main__':
     for transaction in search_operation:
         if transaction["from"]:
             transaction["from"] = get_mask_account_card(transaction["from"])
-            mask_result.append(transaction)
+
 
         if transaction["to"]:
             transaction["to"] = get_mask_account_card(transaction["to"])
-            mask_result.append(transaction)
 
+        mask_result.append(transaction)
 
+    formated_date_result = []
+    for date in mask_result:
+        date['date'] = convert_date(date['date'])
+        formated_date_result.append(date)
+
+    for result in formated_date_result:
+        print(f'{result["date"]} {result["description"]}\n'
+              f'{result["from"]} -> {result["to"]}\n'
+              f'Сумма: {result["operationAmount"]["amount"]} {result["operationAmount"]["currency"]["name"]}')
+        print()
