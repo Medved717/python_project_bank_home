@@ -8,7 +8,7 @@ def get_mask_account_card(card_and_account_number: str) -> str:
     if card_and_account_number == "":
         raise ValueError("Ошибка: введена пустая строка.")
 
-    card_types = {"Maestro": 8, "MasterCard": 11, "Visa Classic": 13, "Visa Platinum": 14, "Visa Gold": 10, "МИР": 3}
+    card_types = {"Maestro": 8, "MasterCard": 11, "Visa Classic": 13, "Visa Platinum": 14, "Visa Gold": 10, "МИР": 4}
     score_types = "Счет"
     score_len = 5
 
@@ -39,6 +39,3 @@ def convert_date(date: str) -> str:
 
     date_obj = datetime.strptime(date[:10], "%Y-%m-%d")
     return date_obj.strftime("%d.%m.%Y")
-
-
-

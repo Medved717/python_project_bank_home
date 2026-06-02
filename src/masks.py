@@ -56,4 +56,3 @@ def get_mask_account(mask_account: str) -> str:
         result = new_mask_account.replace(new_mask_account[0:2], "**")
         logger.info("Выполнение формирования номера счета завершена.")
         return result
-

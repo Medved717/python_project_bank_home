@@ -4,91 +4,95 @@ from src.read_csv_and_excel_files import reading_csv_transactions, reading_excel
 from src.search_and_sort_operations import process_bank_search, counter_bank_operations
 from src.utils.external_api import operations_json
 import os
-from datetime import datetime
+
 
 from src.widget import get_mask_account_card, convert_date
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
-    print('Программа: Привет! Добро пожаловать в программу работы\n '
-          'с банковскими транзакциями. ')
-    print('Выберите необходимый пункт меню:\n'
-          '1. Получить информацию о транзакциях из JSON-файла\n'
-          '2. Получить информацию о транзакциях из CSV-файла\n'
-          '3. Получить информацию о транзакциях из XLSX-файла')
+    print("Программа: Привет! Добро пожаловать в программу работы\n " "с банковскими транзакциями. ")
+    print(
+        "Выберите необходимый пункт меню:\n"
+        "1. Получить информацию о транзакциях из JSON-файла\n"
+        "2. Получить информацию о транзакциях из CSV-файла\n"
+        "3. Получить информацию о транзакциях из XLSX-файла"
+    )
 
     while True:
-        input_word = input('Пользователь:')
-        if input_word == '1':
+        input_word = input("Пользователь:")
+        if input_word == "1":
             path_json_file = os.path.join("data", "operations.json")
             operation_data = operations_json(path_json_file)
-            print('Программа: Для обработки выбран JSON-файл.')
+            print("Программа: Для обработки выбран JSON-файл.")
             break
-        elif input_word == '2':
+        elif input_word == "2":
             path_csv_file = os.path.join("data", "transactions.csv")
             operation_data = reading_csv_transactions(path_csv_file)
-            print('Программа: Для обработки выбран CSV-файл.')
+            print("Программа: Для обработки выбран CSV-файл.")
             break
-        elif input_word == '3':
+        elif input_word == "3":
             path_excel_file = os.path.join("data", "transactions_excel.xlsx")
             operation_data = reading_excel_transactions(path_excel_file)
-            print('Программа: Для обработки выбран EXCEL-файл.')
+            print("Программа: Для обработки выбран EXCEL-файл.")
             break
         else:
-            print('Данного пункта нет в меню.')
+            print("Данного пункта нет в меню.")
 
-    print('Программа: Введите статус, по которому необходимо выполнить фильтрацию.\n'
-          'Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING')
+    print(
+        "Программа: Введите статус, по которому необходимо выполнить фильтрацию.\n"
+        "Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING"
+    )
 
     while True:
-        input_word = input('Пользователь:').upper()
-        if input_word == 'EXECUTED':
+        input_word = input("Пользователь:").upper()
+        if input_word == "EXECUTED":
             filter_data = filter_by_state(operation_data)
             print('Программа: Операции отфильтрованы по статусу "EXECUTED"')
             break
-        elif input_word == 'CANCELED':
-            filter_data = filter_by_state(operation_data, 'CANCELED')
+        elif input_word == "CANCELED":
+            filter_data = filter_by_state(operation_data, "CANCELED")
             print('Программа: Операции отфильтрованы по статусу "CANCELED"')
             break
-        elif input_word == 'PENDING':
-            filter_data = filter_by_state(operation_data, 'PENDING')
+        elif input_word == "PENDING":
+            filter_data = filter_by_state(operation_data, "PENDING")
             print('Программа: Операции отфильтрованы по статусу "PENDING"')
             break
         else:
-            print(f'Программа: Статус операции {input_word} недоступен.')
-            print('Программа: Введите статус, по которому необходимо выполнить фильтрацию.\n'
-                  'Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING')
+            print(f"Программа: Статус операции {input_word} недоступен.")
+            print(
+                "Программа: Введите статус, по которому необходимо выполнить фильтрацию.\n"
+                "Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING"
+            )
 
-    print('Программа: Отсортировать операции по дате? Да/Нет')
+    print("Программа: Отсортировать операции по дате? Да/Нет")
 
     while True:
-        input_word = input('Пользователь').upper()
-        if input_word == 'ДА':
-            print('Программа: Отсортировать по возрастанию или по убыванию?')
-            input_word = input('Пользователь:').lower()
-            if input_word == 'по убыванию':
+        input_word = input("Пользователь").upper()
+        if input_word == "ДА":
+            print("Программа: Отсортировать по возрастанию или по убыванию?")
+            input_word = input("Пользователь:").lower()
+            if input_word == "по убыванию":
                 sort_date = sort_by_date(filter_data)
                 break
-            elif input_word == 'по возрастанию':
+            elif input_word == "по возрастанию":
                 sort_date = sort_by_date(filter_data, False)
                 break
-        elif input_word == 'НЕТ':
+        elif input_word == "НЕТ":
             sort_date = filter_data
             break
 
-    print('Программа: Выводить только рублевые транзакции? Да/Нет')
+    print("Программа: Выводить только рублевые транзакции? Да/Нет")
 
     while True:
-        input_word = input('Пользователь:').upper()
-        if input_word == 'ДА':
-            sort_rub = list(filter_by_currency(sort_date, 'RUB'))
+        input_word = input("Пользователь:").upper()
+        if input_word == "ДА":
+            sort_rub = list(filter_by_currency(sort_date, "RUB"))
             break
-        elif input_word == 'НЕТ':
+        elif input_word == "НЕТ":
             sort_rub = sort_date
             break
 
-    print('Программа: Отфильтровать список транзакций \n'
-          'по определенному слову в описании? Да/Нет')
+    print("Программа: Отфильтровать список транзакций \n" "по определенному слову в описании? Да/Нет")
 
     while True:
         input_word = input("Пользователь:").upper()
@@ -108,22 +112,24 @@ if __name__ == '__main__':
 
     mask_result = []
     for transaction in search_operation:
-        if transaction["from"]:
+        if transaction.get("from"):
             transaction["from"] = get_mask_account_card(transaction["from"])
 
-
-        if transaction["to"]:
+        if transaction.get("to"):
             transaction["to"] = get_mask_account_card(transaction["to"])
 
         mask_result.append(transaction)
 
     formated_date_result = []
     for date in mask_result:
-        date['date'] = convert_date(date['date'])
+        date["date"] = convert_date(date["date"])
         formated_date_result.append(date)
 
     for result in formated_date_result:
-        print(f'{result["date"]} {result["description"]}\n'
-              f'{result["from"]} -> {result["to"]}\n'
-              f'Сумма: {result["operationAmount"]["amount"]} {result["operationAmount"]["currency"]["name"]}')
+        print(
+            f'{result.get("date")} {result.get("description")}\n'
+            f'{result.get("from")} -> {result.get("to")}\n'
+            f'Сумма: {result.get("operationAmount").get("amount")}'
+            f' {result.get("operationAmount").get("currency").get("name")}'
+        )
         print()
